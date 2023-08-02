@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.shopiko01.authetication.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_requestFragment"
+            app:destination="@id/requestFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestFragment"
+        android:name="com.example.shopiko01.authetication.RequestFragment"
+        android:label="Create account or sign in"
+        tools:layout="@layout/fragment_request" >
+        <action
+            android:id="@+id/action_requestFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/requestFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_requestFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/requestFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.shopiko01.authetication.SignInFragment"
+        android:label="Sign in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.shopiko01.authetication.SignUpFragment"
+        android:label="Sign up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.shopiko01.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/homeFragment3"
+        android:name="com.example.shopiko01.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment3_to_catalogFragment3"
+            app:destination="@id/catalogFragment3"
+            app:popUpTo="@id/homeFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment3_to_sellPageFragment3"
+            app:destination="@id/sellPageFragment3"
+            app:popUpTo="@id/homeFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment3_to_analyticsPageFragment3"
+            app:destination="@id/analyticsPageFragment3"
+            app:popUpTo="@id/homeFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment3_to_profilePageFragment3"
+            app:destination="@id/profilePageFragment3"
+            app:popUpTo="@id/homeFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment3_to_addProductFragment2"
+            app:destination="@id/addProductFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalogFragment3"
+        android:name="com.example.shopiko01.CatalogFragment"
+        android:label="Catalog"
+        tools:layout="@layout/fragment_catalog_list" >
+        <action
+            android:id="@+id/action_catalogFragment3_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:popUpTo="@id/catalogFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_catalogFragment3_to_profilePageFragment3"
+            app:destination="@id/profilePageFragment3"
+            app:popUpTo="@id/catalogFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_catalogFragment3_to_sellPageFragment3"
+            app:destination="@id/sellPageFragment3"
+            app:popUpTo="@id/catalogFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_catalogFragment3_to_analyticsPageFragment3"
+            app:destination="@id/analyticsPageFragment3"
+            app:popUpTo="@id/catalogFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_catalogFragment3_to_addProductFragment2"
+            app:destination="@id/addProductFragment2"
+            app:popUpTo="@id/catalogFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_catalogFragment3_to_viewFragment"
+            app:destination="@id/viewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellPageFragment3"
+        android:name="com.example.shopiko01.SellPageFragment"
+        android:label="Sell product"
+        tools:layout="@layout/fragment_sell_page_list" >
+        <action
+            android:id="@+id/action_sellPageFragment3_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:popUpTo="@id/sellPageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sellPageFragment3_to_catalogFragment3"
+            app:destination="@id/catalogFragment3"
+            app:popUpTo="@id/sellPageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sellPageFragment3_to_analyticsPageFragment3"
+            app:destination="@id/analyticsPageFragment3"
+            app:popUpTo="@id/sellPageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sellPageFragment3_to_profilePageFragment3"
+            app:destination="@id/profilePageFragment3"
+            app:popUpTo="@id/sellPageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sellPageFragment3_to_sellDropDownItemSelectFragment"
+            app:destination="@id/sellDropDownItemSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/analyticsPageFragment3"
+        android:name="com.example.shopiko01.AnalyticsPageFragment"
+        android:label="Analytics"
+        tools:layout="@layout/fragment_analytics_page" >
+        <action
+            android:id="@+id/action_analyticsPageFragment3_to_profilePageFragment3"
+            app:destination="@id/profilePageFragment3"
+            app:popUpTo="@id/analyticsPageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_analyticsPageFragment3_to_sellPageFragment3"
+            app:destination="@id/sellPageFragment3"
+            app:popUpTo="@id/analyticsPageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_analyticsPageFragment3_to_catalogFragment3"
+            app:destination="@id/catalogFragment3"
+            app:popUpTo="@id/analyticsPageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_analyticsPageFragment3_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:popUpTo="@id/analyticsPageFragment3"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilePageFragment3"
+        android:name="com.example.shopiko01.ProfilePageFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile_page" >
+        <action
+            android:id="@+id/action_profilePageFragment3_to_analyticsPageFragment3"
+            app:destination="@id/analyticsPageFragment3"
+            app:popUpTo="@id/profilePageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profilePageFragment3_to_sellPageFragment3"
+            app:destination="@id/sellPageFragment3"
+            app:popUpTo="@id/profilePageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profilePageFragment3_to_catalogFragment3"
+            app:destination="@id/catalogFragment3"
+            app:popUpTo="@id/profilePageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profilePageFragment3_to_homeFragment3"
+            app:destination="@id/homeFragment3"
+            app:popUpTo="@id/profilePageFragment3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profilePageFragment3_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/profilePageFragment3"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment2"
+        android:name="com.example.shopiko01.AddProductFragment"
+        android:label="Add product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_addProductFragment2_to_catalogFragment3"
+            app:destination="@id/catalogFragment3" />
+        <action
+            android:id="@+id/action_addProductFragment2_to_viewFragment"
+            app:destination="@id/viewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="com.example.shopiko01.ViewFragment"
+        android:label="View product"
+        tools:layout="@layout/fragment_view" >
+        <argument
+            android:name="item_id"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_viewFragment_to_addProductFragment2"
+            app:destination="@id/addProductFragment2" />
+        <action
+            android:id="@+id/action_viewFragment_to_sellPageFragment3"
+            app:destination="@id/sellPageFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellDropDownItemSelectFragment"
+        android:name="com.example.shopiko01.SellDropDownItemSelectFragment"
+        android:label="Sell "
+        tools:layout="@layout/fragment_sell_drop_down_item_select" >
+        <action
+            android:id="@+id/action_sellDropDownItemSelectFragment_to_sellPageFragment3"
+            app:destination="@id/sellPageFragment3" />
+    </fragment>
+</navigation>

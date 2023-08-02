@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/parent_padding"
+    tools:context=".AddProductFragment">
+
+    <TextView
+        android:id="@+id/add_product_product_name"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_name_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_product_page_product_name_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:hint="@string/enter_product_name"
+        app:layout_constraintBottom_toBottomOf="@id/add_product_product_name"
+        app:layout_constraintStart_toEndOf="@id/add_product_product_name"
+        app:layout_constraintTop_toTopOf="@id/add_product_product_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_product_page_product_name_edit_text"
+            android:inputType="text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/add_product_category"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_space"
+        android:text="@string/category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_product_product_name" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_product_page_category_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        app:layout_constraintBottom_toBottomOf="@id/add_product_category"
+        app:layout_constraintStart_toEndOf="@id/add_product_category"
+        app:layout_constraintTop_toTopOf="@id/add_product_category">
+
+            <AutoCompleteTextView
+                android:id="@+id/add_page_category_dropdown_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/between_element"
+                android:layout_weight="1"
+                android:inputType="none"
+                tools:text="AutoComplete TextView"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/add_page_product_description"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_space"
+        android:text="@string/product_description"
+        app:layout_constraintTop_toBottomOf="@id/add_product_category"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_page_product_description_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/between_element"
+        app:layout_constraintTop_toBottomOf="@id/add_page_product_description"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_page_product_description_text"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:lines="6"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/add_page_cost_price"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/c_p"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_page_product_description_input" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_page_cost_price_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/between_element"
+        app:layout_constraintTop_toBottomOf="@id/add_page_cost_price"
+        app:layout_constraintStart_toStartOf="@id/add_page_cost_price"
+        app:layout_constraintEnd_toEndOf="@id/add_page_cost_price" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_page_cost_price_text"
+            android:inputType="numberDecimal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/add_page_sell_price"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/s_p"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="@dimen/text_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_page_product_description_input" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_page_sell_price_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/between_element"
+        app:layout_constraintTop_toBottomOf="@id/add_page_sell_price"
+        app:layout_constraintStart_toStartOf="@id/add_page_sell_price"
+        app:layout_constraintEnd_toEndOf="@id/add_page_sell_price" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_page_sell_price_text"
+            android:inputType="numberDecimal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/add_page_display_profit"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/line_7"
+        app:layout_constraintEnd_toStartOf="@+id/add_page_sell_price_input"
+        app:layout_constraintStart_toEndOf="@id/add_page_cost_price_input"
+        app:layout_constraintTop_toBottomOf="@id/add_page_cost_price" />
+
+    <TextView
+        android:id="@+id/add_page_product_qty"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_quantity"
+        android:layout_marginTop="@dimen/parent_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_page_cost_price_input"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_page_product_qty_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/text_margin"
+        app:layout_constraintTop_toTopOf="@id/add_page_product_qty"
+        app:layout_constraintStart_toEndOf="@id/add_page_product_qty"
+        app:layout_constraintBottom_toBottomOf="@id/add_page_product_qty">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_page_product_qty_text"
+            android:hint="@string/enter_product_quantity"
+            android:inputType="number"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/add_page_full_line"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="@dimen/parent_padding"
+        android:background="@drawable/ic_full_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_page_product_qty" />
+
+    <TextView
+        android:id="@+id/add_page_profit_margin_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="20"
+        android:layout_marginTop="@dimen/parent_padding"
+        app:layout_constraintTop_toBottomOf="@id/add_page_full_line"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/add_page_percentage_sign"
+        style="@style/Widget.Shopiko01.LargePlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/between_element"
+        android:text="@string/percentage_symbol"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="@id/add_page_profit_margin_input"
+        app:layout_constraintBottom_toBottomOf="@id/add_page_profit_margin_input"
+        app:layout_constraintStart_toEndOf="@id/add_page_profit_margin_input" />
+
+    <TextView
+        android:id="@+id/add_page_percentage_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/percentage_text"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/between_element"
+        app:layout_constraintTop_toTopOf="@id/add_page_percentage_sign"
+        app:layout_constraintBottom_toBottomOf="@id/add_page_percentage_sign"
+        app:layout_constraintStart_toEndOf="@id/add_page_percentage_sign" />
+
+    <TextView
+        android:id="@+id/add_page_small_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/note_msg"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="@dimen/parent_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_page_profit_margin_input" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_page_add_product_btn"
+        android:layout_width="@dimen/add_to_sell_btn"
+        android:layout_height="60dp"
+        app:cornerRadius="@dimen/parent_padding"
+        android:text="@string/add_product"
+        android:layout_marginTop="@dimen/parent_padding"
+        app:layout_constraintTop_toBottomOf="@id/add_page_small_notes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/parent_padding"
+    android:id="@+id/view_page_for_snack_purpose"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/view_page_product_name_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        app:cardElevation="@dimen/text_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/view_page_product_name"
+            style="@style/Widget.Shopiko01.LargePlaceHolderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="@string/product_name_placeholder"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/view_page_category_place_holder"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_product_name_card_view" />
+
+    <TextView
+        android:id="@+id/view_page_category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_page_category_place_holder"
+        app:layout_constraintBottom_toBottomOf="@id/view_page_category_place_holder"
+        tools:text="Category name" />
+
+    <TextView
+        android:id="@+id/view_page_c_p_place_holder"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/c_p"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_category_place_holder" />
+
+    <TextView
+        android:id="@+id/view_page_c_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_page_c_p_place_holder"
+        app:layout_constraintBottom_toBottomOf="@id/view_page_c_p_place_holder"
+        tools:text="$180" />
+
+    <TextView
+        android:id="@+id/view_page_s_p_place_holder"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/s_p"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_c_p_place_holder" />
+
+    <TextView
+        android:id="@+id/view_page_s_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_page_s_p_place_holder"
+        app:layout_constraintBottom_toBottomOf="@id/view_page_s_p_place_holder"
+        tools:text="$200" />
+
+    <TextView
+        android:id="@+id/view_page_profit_place_holder"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/percentage_profit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_s_p_place_holder" />
+
+    <TextView
+        android:id="@+id/view_page_profit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_page_profit_place_holder"
+        app:layout_constraintBottom_toBottomOf="@id/view_page_profit_place_holder"
+        tools:text="$20" />
+
+    <TextView
+        android:id="@+id/view_page_qty_place_holder"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_profit_place_holder" />
+
+    <TextView
+        android:id="@+id/view_page_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_page_qty_place_holder"
+        app:layout_constraintBottom_toBottomOf="@id/view_page_qty_place_holder"
+        tools:text="2000" />
+
+    <TextView
+        android:id="@+id/view_page_description_place_holder"
+        style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+        android:text="@string/description"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_qty_place_holder" />
+
+    <TextView
+        android:id="@+id/view_page_description"
+        android:layout_marginTop="@dimen/between_element"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_description_place_holder"
+        tools:text="@string/jargon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/view_page_delete_btn"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/text_margin"
+        app:cornerRadius="@dimen/parent_padding"
+        android:layout_height="65dp"
+        android:text="@string/delete"
+        android:backgroundTint="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_edit_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/view_page_edit_btn"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="170dp"
+        android:layout_marginTop="@dimen/parent_padding"
+        app:cornerRadius="@dimen/parent_padding"
+        android:layout_height="65dp"
+        android:text="@string/edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view_page_add_to_sell_btn"
+        app:layout_constraintTop_toBottomOf="@id/view_page_description" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/view_page_add_to_sell_btn"
+        android:layout_width="170dp"
+        android:layout_marginTop="@dimen/parent_padding"
+        app:cornerRadius="@dimen/parent_padding"
+        android:layout_height="65dp"
+        android:text="@string/add_to_sell"
+        app:layout_constraintStart_toEndOf="@id/view_page_edit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_page_description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
