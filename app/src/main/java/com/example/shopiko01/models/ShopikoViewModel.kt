@@ -331,6 +331,10 @@ class ShopikoViewModel : ViewModel() {
         val currentDateAndTime = Date()
         return simpleDateFormat.format(currentDateAndTime)
     }
+
+    fun setProfit(cp: String, sp: String): String {
+        return "%.2f".format(((sp.toDouble() - cp.toDouble()) / cp.toDouble() * 100))
+    }
 }
 
 //class ShopikoViewModelFactory(val context: Context) :

@@ -29,6 +29,13 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/view_item_guide_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="182dp" />
+
     <TextView
         android:id="@+id/view_page_category_place_holder"
         style="@style/Widget.Shopiko01.MediumPlaceHolderText"
@@ -44,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/view_item_guide_line"
         app:layout_constraintTop_toTopOf="@id/view_page_category_place_holder"
         app:layout_constraintBottom_toBottomOf="@id/view_page_category_place_holder"
         tools:text="Category name" />
@@ -64,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/view_item_guide_line"
         app:layout_constraintTop_toTopOf="@id/view_page_c_p_place_holder"
         app:layout_constraintBottom_toBottomOf="@id/view_page_c_p_place_holder"
         tools:text="$180" />
@@ -84,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/view_item_guide_line"
         app:layout_constraintTop_toTopOf="@id/view_page_s_p_place_holder"
         app:layout_constraintBottom_toBottomOf="@id/view_page_s_p_place_holder"
         tools:text="$200" />
@@ -104,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/view_item_guide_line"
         app:layout_constraintTop_toTopOf="@id/view_page_profit_place_holder"
         app:layout_constraintBottom_toBottomOf="@id/view_page_profit_place_holder"
         tools:text="$20" />
@@ -124,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/view_item_guide_line"
         app:layout_constraintTop_toTopOf="@id/view_page_qty_place_holder"
         app:layout_constraintBottom_toBottomOf="@id/view_page_qty_place_holder"
         tools:text="2000" />

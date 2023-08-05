@@ -74,6 +74,22 @@
     <string name="nothing_to_show">Nothing to show</string>
     <string name="choose_category">Choose category</string>
     <string name="add_to_category">Add to Category</string>
+    <string name="items_with_highest_sales">Items with the highest sales in this category</string>
+    <string name="best_selling_items">Best selling items</string>
+    <string name="least_selling_items">Least Selling Items</string>
+    <string name="your_email">Your Email :</string>
+    <string name="sales_history">Sales History</string>
+    <string name="update_profile">Update profile</string>
+    <string name="log_out">Log Out</string>
+    <string name="my_category">My Category</string>
+    <string name="enter_your_name">Full Name</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="sales_transaction">Sales Transaction</string>
+    <string name="buyer_name">Buyer\'s Name</string>
+    <string name="item_name">Item Name</string>
+    <string name="cumulative_quantity">Cumulative Quantity</string>
+    <string name="profit">Profit</string>
+    <string name="transaction_performance">Performed on : %1$s</string>
 
     <!--    Spinner items-->
     <string-array name="planets_array">

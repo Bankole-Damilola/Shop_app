@@ -68,8 +68,8 @@ class CatalogFragment : Fragment() {
         }
 
         binding.catalogPageRecyclerView.adapter = catalogAdapter
-        viewModel.itemsFromFirebase.observe(this.viewLifecycleOwner
-        ) { items -> items.let {
+        viewModel.itemsFromFirebase.observe(this.viewLifecycleOwner) {
+                items -> items.let {
                 catalogAdapter.submitList(it)
             }
             listItems = items

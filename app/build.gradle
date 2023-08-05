@@ -56,7 +56,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
 
     //noinspection GradleDeprecatedConfiguration
-    // Chart library called anychart
+    // This dependency enables the use of analytic materials such as charts and the likes
+    implementation "com.github.Philjay:MPAndroidChart:v3.1.0"
 
 
     testImplementation 'junit:junit:4.13.2'

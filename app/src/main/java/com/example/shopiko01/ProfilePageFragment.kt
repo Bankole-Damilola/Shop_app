@@ -35,18 +35,22 @@ class ProfilePageFragment : Fragment() {
 
         if (user.currentUser != null) {
             user.currentUser?.let {
-                binding.profilePageShopName.text = it.email
+                binding.profilePageShopEmail.text = it.email
             }
         }
 
-        binding.profilePageSignOutBtn.setOnClickListener {
-            user.signOut()
-            findNavController().navigate(R.id.action_profilePageFragment3_to_signInFragment)
+        binding.profilePageLogOutCardView.setOnClickListener {
+            signOutUser()
         }
         bottomNavDestinations()
 
         binding.profileIcon.setImageResource(R.drawable.ic_profile)
 
+    }
+
+    private fun signOutUser () {
+        user.signOut()
+        findNavController().navigate(R.id.action_profilePageFragment3_to_signInFragment)
     }
 
     private fun bottomNavDestinations() {
@@ -65,6 +69,18 @@ class ProfilePageFragment : Fragment() {
 
             catalogIconLayout.setOnClickListener {
                 findNavController().navigate(R.id.action_profilePageFragment3_to_catalogFragment3)
+            }
+
+            profilePageCategoryCardView.setOnClickListener {
+                findNavController().navigate(R.id.action_profilePageFragment3_to_viewCategoryFragment)
+            }
+
+            profilePageSalesHistoryCardView.setOnClickListener {
+                findNavController().navigate(R.id.action_profilePageFragment3_to_soldItemsFragment)
+            }
+
+            profilePageUpdateProfileCardView.setOnClickListener {
+                findNavController().navigate(R.id.action_profilePageFragment3_to_updateProfileDetailsFragment)
             }
         }
     }

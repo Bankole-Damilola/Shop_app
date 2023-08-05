@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/parent_padding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SoldItemsFragment">
+
+    <ImageView
+        android:id="@+id/sold_items_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sales_history"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sold_items_text"
+        style="@style/Widget.Shopiko01.LargePlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="@string/sales_history"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="@id/sold_items_image"
+        app:layout_constraintBottom_toBottomOf="@id/sold_items_image"
+        app:layout_constraintStart_toEndOf="@id/sold_items_image" />
+
+    <FrameLayout
+        android:id="@+id/sold_items_page_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="true"
+        android:layout_marginTop="@dimen/between_element"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sold_items_text"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sold_items_recycler_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/each_sold_item_template" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

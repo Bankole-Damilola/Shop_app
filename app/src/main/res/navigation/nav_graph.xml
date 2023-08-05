@@ -223,6 +223,15 @@
             app:destination="@id/signInFragment"
             app:popUpTo="@id/profilePageFragment3"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profilePageFragment3_to_viewCategoryFragment"
+            app:destination="@id/viewCategoryFragment" />
+        <action
+            android:id="@+id/action_profilePageFragment3_to_soldItemsFragment"
+            app:destination="@id/soldItemsFragment" />
+        <action
+            android:id="@+id/action_profilePageFragment3_to_updateProfileDetailsFragment"
+            app:destination="@id/updateProfileDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addProductFragment2"
@@ -260,4 +269,28 @@
             android:id="@+id/action_sellDropDownItemSelectFragment_to_sellPageFragment3"
             app:destination="@id/sellPageFragment3" />
     </fragment>
+    <fragment
+        android:id="@+id/viewCategoryFragment"
+        android:name="com.example.shopiko01.ViewCategoryFragment"
+        android:label="fragment_view_category"
+        tools:layout="@layout/fragment_view_category" />
+    <fragment
+        android:id="@+id/soldItemsFragment"
+        android:name="com.example.shopiko01.SoldItemsFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_sold_items" >
+        <action
+            android:id="@+id/action_soldItemsFragment_to_viewSoldItemDetailsFragment"
+            app:destination="@id/viewSoldItemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewSoldItemDetailsFragment"
+        android:name="com.example.shopiko01.ViewSoldItemDetailsFragment"
+        android:label="Sales Receipt"
+        tools:layout="@layout/fragment_view_sold_item_details" />
+    <fragment
+        android:id="@+id/updateProfileDetailsFragment"
+        android:name="com.example.shopiko01.UpdateProfileDetailsFragment"
+        android:label="Update Profile"
+        tools:layout="@layout/fragment_update_profile_details" />
 </navigation>

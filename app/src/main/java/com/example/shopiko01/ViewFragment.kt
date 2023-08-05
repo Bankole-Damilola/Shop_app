@@ -110,6 +110,7 @@ class ViewFragment : Fragment(), AddToSellPopUpFragment.OnQuantityProvided {
             viewPageProductName.text = item.itemName.toString()
             viewPageCP.text = item.itemCostPrice.toString()
             viewPageSP.text = item.itemSellingPrice.toString()
+            viewPageProfit.text = (viewModel.setProfit(item.itemCostPrice, item.itemSellingPrice))
             viewPageQty.text = item.itemQuantity.toString()
             viewPageDescription.text = item.truncateWords(item.itemDescription, 150)
         }

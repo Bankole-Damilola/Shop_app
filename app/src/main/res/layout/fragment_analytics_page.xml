@@ -6,16 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".AnalyticsPageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/analytics_parent_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/text_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/analytic_dashboard_layout"
-        android:textSize="40dp"
-        android:text="@string/analytics" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/analytic_dashboard_layout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/analytic_category_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="320dp"
+            app:startIconDrawable="@drawable/ic_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/analytic_category_dropdown_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                tools:text="AutoComplete TextView"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/analytic_go_btn"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/analytic_category_layout"
+            app:layout_constraintBottom_toBottomOf="@id/analytic_category_layout"
+            app:layout_constraintStart_toEndOf="@id/analytic_category_layout"
+            android:src="@drawable/ic_pop_up_arrow" />
+
+        <TextView
+            android:id="@+id/analytics_best_selling_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/best_selling_items"
+            android:layout_marginTop="@dimen/between_element"
+            android:textSize="22sp"
+            android:textColor="@color/deep_green_500"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analytic_category_layout" />
+        
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/analytic_pie_chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analytics_best_selling_items" />
+
+        <TextView
+            android:id="@+id/analytics_least_selling_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/between_element"
+            android:text="@string/least_selling_items"
+            android:textSize="22sp"
+            android:textColor="@color/deep_green_500"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analytic_pie_chart" />
+
+        <FrameLayout
+            android:id="@+id/home_page_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="true"
+            android:layout_marginTop="@dimen/between_element"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analytics_least_selling_items"
+            app:layout_constraintBottom_toBottomOf="parent" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/analytic_recycler_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/each_sold_item_template" />
+
+        </FrameLayout>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/analytic_dashboard_layout"

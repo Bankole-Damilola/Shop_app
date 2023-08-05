@@ -73,31 +73,32 @@ class SellPageFragment : Fragment(), AddCategoryPopUpFragment.OnCategoryProvided
         }
 
         viewModel.itemsSoldFromFirebase.observe(this.viewLifecycleOwner) {
-            itemSoldData -> for (eachItemSoldData in itemSoldData) {
-                soldItems.add(
-                    ItemSold(
-                        eachItemSoldData.itemSoldId,
-                        eachItemSoldData.itemName,
-                        eachItemSoldData.itemQuantity,
-                        eachItemSoldData.itemCumulativeQty,
-                        eachItemSoldData.itemCategory,
-                        eachItemSoldData.profitsOnItemSold,
-                        eachItemSoldData.cumulativeProfitsOnItemSold,
-                        eachItemSoldData.timeItemIsSold,
-                        eachItemSoldData.itemCostPrice,
-                        eachItemSoldData.cumulativeItemCostPrice,
-                        eachItemSoldData.itemSellingPrice,
-                        eachItemSoldData.cumulativeItemSellingPrice,
-                        eachItemSoldData.purchasedBy
+            itemSoldData ->
+            if (itemSoldData != null) {
+                for (eachItemSoldData in itemSoldData) {
+                    soldItems.add(
+                        ItemSold(
+                            eachItemSoldData.itemSoldId,
+                            eachItemSoldData.itemName,
+                            eachItemSoldData.itemQuantity,
+                            eachItemSoldData.itemCumulativeQty,
+                            eachItemSoldData.itemCategory,
+                            eachItemSoldData.profitsOnItemSold,
+                            eachItemSoldData.cumulativeProfitsOnItemSold,
+                            eachItemSoldData.timeItemIsSold,
+                            eachItemSoldData.itemCostPrice,
+                            eachItemSoldData.cumulativeItemCostPrice,
+                            eachItemSoldData.itemSellingPrice,
+                            eachItemSoldData.cumulativeItemSellingPrice,
+                            eachItemSoldData.purchasedBy
+                        )
                     )
-                )
-        }
+                }
+            }
         }
 
-        if (viewModel.itemsAddedToSellList != null) {
-            sellPageAdapter = SellPageAdapter{}
-            sellPageAdapter.notifyDataSetChanged()
-        }
+        sellPageAdapter = SellPageAdapter{}
+        sellPageAdapter.notifyDataSetChanged()
         return binding.root
     }
 
@@ -213,9 +214,9 @@ class SellPageFragment : Fragment(), AddCategoryPopUpFragment.OnCategoryProvided
 
     private fun clearRecyclerList() {
         callPopUpToGetPurchaserName()
-        viewModel.totalPriceOfProductToBeSold = 0.0
-        binding.sellPageTotalPrice.text = ""
-        Toast.makeText(context, "Item(s) successfully sold", Toast.LENGTH_LONG).show()
+//        viewModel.totalPriceOfProductToBeSold = 0.0
+//        binding.sellPageTotalPrice.text = ""
+//        Toast.makeText(context, "Item(s) successfully sold", Toast.LENGTH_LONG).show()
     }
 
     private fun callPopUpToGetPurchaserName() {
@@ -389,8 +390,10 @@ class SellPageFragment : Fragment(), AddCategoryPopUpFragment.OnCategoryProvided
 
     @SuppressLint("NotifyDataSetChanged")
     override fun getCategory(category: String, categoryTextField: TextInputEditText) {
-        if (soldItems.isNullOrEmpty()) {
-            for (itemSold in viewModel.itemsAddedToSellList) {
+
+        for (itemSold in viewModel.itemsAddedToSellList) {
+
+            if (soldItems.isEmpty()) {
                 viewModel.insertItemSold(
                     ItemSold(
                         viewModel.soldItemsDatabaseRef.push().key!!,
@@ -408,9 +411,7 @@ class SellPageFragment : Fragment(), AddCategoryPopUpFragment.OnCategoryProvided
                         category
                     )
                 )
-            }
-        } else {
-            for (soldItem in soldItems) {
+            } else {
                 var isItemSoldInSoldItem = false
                 var mySoldItem = ItemSold(
                     "", "", "", "",
@@ -418,8 +419,9 @@ class SellPageFragment : Fragment(), AddCategoryPopUpFragment.OnCategoryProvided
                     "", "", "", "",
                     ""
                 )
-                for (itemSold in viewModel.itemsAddedToSellList) {
-                    if (itemSold.itemName == soldItem.itemName) {
+
+                for (soldItem in soldItems) {
+                    if (soldItem.itemName == itemSold.itemName) {
                         isItemSoldInSoldItem = true
                         mySoldItem = ItemSold(
                             viewModel.soldItemsDatabaseRef.push().key!!,
@@ -437,8 +439,12 @@ class SellPageFragment : Fragment(), AddCategoryPopUpFragment.OnCategoryProvided
                             category
                         )
                         break
-                    } else {
-                        mySoldItem = ItemSold(
+                    }
+                }
+
+                if (!isItemSoldInSoldItem) {
+                    viewModel.insertItemSold(
+                        ItemSold(
                             viewModel.soldItemsDatabaseRef.push().key!!,
                             itemSold.itemName,
                             itemSold.itemQuantity,
@@ -453,20 +459,21 @@ class SellPageFragment : Fragment(), AddCategoryPopUpFragment.OnCategoryProvided
                             itemSold.itemSellingPrice,
                             category
                         )
-                        break
-                    }
-                }
-                if (!isItemSoldInSoldItem) {
-                    if (soldItem.itemName == mySoldItem.itemName) {
-                        viewModel.insertItemSold(mySoldItem)
-                    }
+                    )
+
                 } else {
                     viewModel.insertItemSold(mySoldItem)
                 }
             }
         }
+
+        categoryTextField.text = null
         viewModel.itemsAddedToSellList.clear()
         sellPageAdapter.notifyDataSetChanged()
+        viewModel.totalPriceOfProductToBeSold = 0.0
+        binding.sellPageTotalPrice.text = ""
+        addPurchaserNamePopUp!!.dismiss()
+        Toast.makeText(context, "Item(s) successfully sold", Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroyView() {

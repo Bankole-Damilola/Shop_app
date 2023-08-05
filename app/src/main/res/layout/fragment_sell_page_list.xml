@@ -41,6 +41,7 @@
             android:id="@+id/sell_page_dropdown"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="wrap_content"
+            android:minWidth="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/text_margin"
             app:layout_constraintStart_toEndOf="@id/sell_page_product_placeholder"

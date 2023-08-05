@@ -44,7 +44,7 @@ class AddProductFragment : Fragment() {
                 val itemSellingPrice = addPageSellPriceText.text.toString()
 
                 if (itemCostPrice.isNotEmpty() && itemSellingPrice.isNotEmpty()) {
-                    val profit = setProfit(itemCostPrice, itemSellingPrice)
+                    val profit = viewModel.setProfit(itemCostPrice, itemSellingPrice)
                     addPageProfitMarginInput.text = profit
                 }
             }
@@ -95,13 +95,14 @@ class AddProductFragment : Fragment() {
                             itemName, itemCategory, itemDescription, itemCostPrice, itemSellingPrice, itemQuantity
                         )
                         viewModel.insertItem(itemAttribute)
+                        findNavController().navigate(R.id.action_addProductFragment2_to_catalogFragment3)
                     } else {
                         val itemAttribute = viewModel.itemAttr(item?.itemId.toString(),
                             itemName, itemCategory, itemDescription, itemCostPrice, itemSellingPrice, itemQuantity
                         )
                         viewModel.updateItem(itemAttribute)
+                        findNavController().navigateUp()
                     }
-                    findNavController().navigateUp()
 
                     setFieldsToNull()
                 }
@@ -134,9 +135,5 @@ class AddProductFragment : Fragment() {
             val adapter = DropdownAdapter(requireContext(), R.layout.dropdown_layout, itemCategories)
             addPageCategoryDropdownText.setAdapter(adapter)
         }
-    }
-
-    private fun setProfit(cp: String, sp: String): String {
-        return "%.2f".format(((sp.toDouble() - cp.toDouble()) / cp.toDouble() * 100))
     }
 }

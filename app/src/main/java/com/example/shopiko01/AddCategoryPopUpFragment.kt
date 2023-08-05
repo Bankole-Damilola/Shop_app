@@ -21,6 +21,10 @@ class AddCategoryPopUpFragment : DialogFragment() {
         this.listener = listener
     }
 
+    fun setCategoryPageListener (listener : ViewCategoryFragment) {
+        this.listener = listener
+    }
+
     // Listener to call pop up set in Sell Fragment
     fun setSellListener (listener : SellPageFragment) {
         this.listener = listener

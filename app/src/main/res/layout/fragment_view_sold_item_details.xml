@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/parent_padding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewSoldItemDetailsFragment">
+
+    <ImageView
+        android:id="@+id/sold_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sold_item_text"
+        style="@style/Widget.Shopiko01.LargePlaceHolderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="@string/sales_transaction"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="@id/sold_item_image"
+        app:layout_constraintBottom_toBottomOf="@id/sold_item_image"
+        app:layout_constraintStart_toEndOf="@id/sold_item_image" />
+
+    <TextView
+        android:id="@+id/sold_item_date"
+        style="@style/Widget.Shopiko01.LessOpaqueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Performed on 30/07/23 18:58:45"
+        app:layout_constraintTop_toBottomOf="@id/sold_item_text"
+        app:layout_constraintStart_toStartOf="@id/sold_item_text" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        app:layout_constraintTop_toBottomOf="@id/sold_item_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sold_item_guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="182dp" />
+
+        <TextView
+            android:id="@+id/sold_item_place_holder_name"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_name"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sold_item_name"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Pepsi"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_place_holder_name" />
+
+        <View
+            android:id="@+id/sold_item_full_line_one"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_place_holder_name" />
+
+        <TextView
+            android:id="@+id/sold_item_buyer_place_holder_name"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buyer_name"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_full_line_one" />
+
+        <TextView
+            android:id="@+id/sold_item_buyer_name"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Bankole Damilola I"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_buyer_place_holder_name" />
+
+        <View
+            android:id="@+id/sold_item_full_line_two"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_buyer_place_holder_name" />
+
+        <TextView
+            android:id="@+id/sold_item_qty_place_holder"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_full_line_two" />
+
+        <TextView
+            android:id="@+id/sold_item_qty"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="21"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_qty_place_holder" />
+
+        <View
+            android:id="@+id/sold_item_full_line_three"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_qty_place_holder" />
+
+        <TextView
+            android:id="@+id/sold_item_cumulative_qty_place_holder"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cumulative_quantity"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_full_line_three" />
+
+        <TextView
+            android:id="@+id/sold_item_cum_qty"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="120"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_cumulative_qty_place_holder" />
+
+        <View
+            android:id="@+id/sold_item_full_line_four"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_cumulative_qty_place_holder" />
+
+        <TextView
+            android:id="@+id/sold_item_profit_place_holder"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profit"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_full_line_four" />
+
+        <TextView
+            android:id="@+id/sold_item_profit"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$120"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_profit_place_holder" />
+
+        <View
+            android:id="@+id/sold_item_full_line_five"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_profit_place_holder" />
+
+        <TextView
+            android:id="@+id/sold_item_category_place_holder"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_full_line_five" />
+
+        <TextView
+            android:id="@+id/sold_item_category"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Consumable"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_category_place_holder" />
+
+        <View
+            android:id="@+id/sold_item_full_line_six"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_category_place_holder" />
+
+        <TextView
+            android:id="@+id/sold_item_cp_place_holder"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_p"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_full_line_six" />
+
+        <TextView
+            android:id="@+id/sold_item_cp"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$ 21"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_cp_place_holder" />
+
+        <View
+            android:id="@+id/sold_item_full_line_seven"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_cp_place_holder" />
+
+        <TextView
+            android:id="@+id/sold_item_sp_place_holder"
+            style="@style/Widget.Shopiko01.MediumPlaceHolderText"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/s_p"
+            android:textColor="@color/deep_green_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_full_line_seven" />
+
+        <TextView
+            android:id="@+id/sold_item_sp"
+            style="@style/Widget.Shopiko01.LessOpaqueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$ 23"
+            app:layout_constraintStart_toStartOf="@id/sold_item_guide_line"
+            app:layout_constraintTop_toTopOf="@id/sold_item_sp_place_holder" />
+
+        <View
+            android:id="@+id/sold_item_full_line_eight"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:background="@drawable/ic_full_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sold_item_sp_place_holder" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
